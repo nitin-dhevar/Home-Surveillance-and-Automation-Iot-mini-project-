@@ -1,0 +1,723 @@
+
+<html>
+
+    <head>
+        
+        <title>Home Security</title>
+    
+     
+        <style>
+            
+ input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+ button {
+  background-color: #53C9D5;
+  color: white;
+ /* padding: 10px 10px;*/
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+    top=-400px;
+
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+    height: 40px;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+      
+  }
+}
+            
+            .onSwitch{
+                position: relative;
+                top:-20px;
+                width:60px;
+                height: :30px;
+                background-color: green;
+            }      
+            
+             .offSwitch{
+                position: relative;
+                top:-20px;
+                width:60px;
+                height: :30px;
+                background-color: red;
+            }       
+            
+        #topbar {
+                
+                width:1000px;
+                margin:0 auto;
+                height: 40px;
+          
+               
+                
+                
+            }
+            
+            body {
+                
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+                 
+            }
+            
+            #logo {
+                
+                margin-top:8px;
+                width:100px;
+                float:left;
+                margin-right:8px;
+                
+            }
+            
+            .topbar-section {
+                
+                float:left;
+                border-left: 1px #CCCCCC solid;
+                height:100%;
+               
+                
+            }
+            
+            #signin-image {
+                
+                width:25px;
+                margin:11px 15px ;
+                float:left;
+                
+            }
+            
+            #signin-text {
+                
+                font-weight: bold;
+                font-size:90%;
+                position:relative;
+                top:14px;
+              /*  padding-right:50px;*/
+                width: 30px;
+                height: 20px;
+            }
+            
+          
+            
+            #bell {
+               /* float:left;*/
+                position: relative;
+                height: 50px;
+              /* margin: 9px 17px 2px 8px;*/
+                 left: 570px;
+                
+                
+            }
+             #alert{
+               font-weight: bold;
+                color:  #53C9D5;
+                 position: relative;
+                top: 165px;
+                margin-left:960px;
+
+
+            }
+            
+            
+            #bell-div {
+                
+                float:left;
+                
+            }
+            
+            .topbar-menu {
+                
+                font-weight: bold;
+                font-size: 90%;
+                padding: 13px 15px 0 15px;
+                height:27px;
+               
+                
+            }
+            
+          
+          
+            
+           
+            
+            .clear {
+                
+                clear:both;
+                
+            }
+            
+            #menu-bar-container {
+                
+                border-top: 1px solid #CCCCCC;
+                background-color: #53C9D5  ;
+                width:100%;
+                height:70px;
+                
+            }
+            
+            #menu-bar {
+                
+                width:1000px;
+                margin:0 auto;
+                
+            }
+            
+            h1 {
+                
+                padding:0;
+                margin:0;
+                color:white;
+                font-size: 40px;
+                font-weight: normal;
+                padding-top: 10px;
+                float:left;
+               margin-left: 270px;
+            }
+            
+          
+               
+            
+            #menu-bar-2-container {
+                
+                background-color:#3CADDC ;
+                width: 100%;
+                
+            }
+            
+            #menu-bar-2 {
+                
+                width:1000px;
+                margin:0 auto;
+                height:40px;
+                
+            }
+            
+            #menu-bar-2 a {
+                
+                color: white;
+                text-decoration: none;
+                padding: 0 10px;
+                border-right: 1px solid #2FE1E3;
+                font-size:14px;
+                position: relative;
+                top: 10px;
+                
+            }
+            
+            #menu-bar-2 a:hover {
+                
+                text-decoration: underline;
+                
+            }
+            
+            .no-border {
+                
+                border:none !important;
+                
+            }
+            
+          
+            #page-container {
+                
+                width:1000px;
+                margin: 0 auto;
+                
+            }
+            
+            h2 {
+                
+                font-weight: normal;
+                margin-top:40px;
+                font-size:20px;
+                border-bottom: 2px solid #61DCD2 ;
+                width:105px;
+                
+            }
+            
+            h3 a {
+                
+                color:black;
+                font-size: 30px;
+                text-decoration: none;
+                
+            }
+            
+            h3 a:hover {
+                
+                color:#1167a8;
+                
+            }
+            
+            #article-summary {
+                
+                color: #5a5a5a;
+                width:250px;
+                float:left;
+                
+            }
+            
+            
+            .topic-link {
+                
+                text-decoration: none;
+                color:#61DCD2;
+                border-left: 1px solid #CCCCCC;
+                padding-left: 10px;
+                
+            }
+            
+            #article-summary a:hover {
+                
+                color:#1167a8;
+                
+            }
+            
+          
+            
+            #article-container {
+                
+                float:left;
+                width:670px;
+                border-right: 1px solid #CCCCCC;
+                padding-right: 20px;
+                
+            }
+            
+            #main-article-image {
+                
+                width:400px;
+                margin-left:20px;
+                
+            }
+            
+            #article-hr {
+                
+                border-top:1px solid #61DCD2 ;
+                width:50px;
+                
+            }
+            
+           
+            
+            #watch-listen {
+                
+                margin-left:20px;
+                width:280px;
+                float:right;
+            }
+            
+            h4 {
+                
+                font-weight: normal;
+                font-size:20px;
+                
+            }
+            
+            .article-side-image {
+                
+                float:left;
+                width:90px;
+                margin-right:10px;
+                margin-bottom: 20px;
+                height: 70px;
+                
+            }
+            
+            .watch-listen-link {
+                
+                text-decoration: none;
+                color:black;
+                font-weight:bold;
+                font-size:18px;
+                
+            }
+            
+            .watch-listen-link:hover {
+                
+                color:#1167a8;
+                
+            }
+            
+            .side-article {
+                
+                float:right;
+                width:180px;
+                position:relative;
+                top:-18px;
+            }
+            
+            .no-border {
+                
+                border-left:none;
+                padding:0;
+            }
+            
+            .border-right {
+                
+                border-right: 1px solid #CCCCCC;
+                
+            }
+            
+        .circle{
+           
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 30px;
+        }
+       
+      
+         #green{
+            background-color: green;
+            position :relative;
+            top: 20px;
+        }
+            
+          #red{
+        
+            background-color: red;
+            position :relative;
+            top: 20px;
+            
+        }
+            #blue{
+                background-color: blue;
+            position :relative;
+            top: 170px;
+            left:920px;
+            }
+            
+        #shift{
+                position: relative;
+                float: left;
+                left: 40px;
+            }
+            
+            .main-article-image2{
+                position: relative;
+                top:10px;
+                width 60px;
+                height: 60px;
+            }
+            
+           
+        
+        
+    
+      </style>  
+        
+    </head>
+
+    <body>
+               
+
+
+        
+       
+            
+            <div id="bell-div">
+            
+                
+                <div class="circle" id="blue"></div>
+                <p id="alert">ALERT MESSAGES</p>
+            
+            </div>
+            
+            
+              <script type="text/javascript">
+              
+         document.getElementById("blue").onclick=function(){
+
+             window.open('alerts.html')
+         }
+         
+     
+          
+         </script>
+            
+
+            
+      
+        
+        <div class="clear"></div>
+        
+        <div id="menu-bar-container">
+            
+            <div id="menu-bar">
+            
+                <h1>Home Surveillance System </h1>
+                
+            
+                
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div id="menu-bar-2-container">
+            
+                <div id="menu-bar-2">
+                
+                   
+                
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <div class="clear"></div>
+        
+        <div id="page-container">
+        
+            <div id="main-article">
+        
+                <h2>Technology</h2>
+                
+                <div id="article-container">
+        
+                    <h3><a href="">Transforming your space into a safe environment</a></h3>
+
+                    <div id="article-summary">
+
+                        <p>Safety of people should be the highest law and our main goal is to provide safety of your house even in your absence.  Protect your house from accidents and robbery.Take an extra step to safety.</p>
+
+                      
+                        
+                        <hr id="article-hr"  align="left">
+                        
+                        <p><a class="article-link" href="">Extra features : automatic switching of electrical appliances</a></p>
+                        
+
+                    </div>
+                    
+                
+                </div>
+                
+            </div>
+            
+            <div id="watch-listen">
+            
+                <h4 id="shift">Do you want to open the door ?</h4>
+                
+                
+                <div class="side-article">
+                    
+                    <div class="circle" id="green"></div>
+                    <div class="circle" id="red"></div>
+      
+
+       <script type="text/javascript">
+       
+         document.getElementById("red").onclick=function(){
+             alert("DON'T ALLOW")
+             window.open('http://192.168.43.201:5000/servoOn/')
+         }
+          
+           document.getElementById("green").onclick=function(){
+             alert("ALLOW")
+                 window.open('http://192.168.43.201:5000/servoOff/')
+           
+         }
+          
+         </script>
+                    
+                </div>
+                
+               
+                  <div class="clear"></div>
+                
+                
+                <h4>Which device do you want to turn on .?.</h4>
+                <div>light</div>
+                
+                <div class="side-article">
+                
+                  <button type="submit" class="onSwitch"  class="signupbtn"  id="onSwitch1">Switch On</button>
+                   <button type="submit" class="offSwitch"  class="signupbtn"  id="offSwitch1">Switch Off</button>
+
+       <script type="text/javascript">
+       
+         document.getElementById("onSwitch1").onclick=function(){
+             alert("Switch On")
+             window.open('http://192.168.43.201:5000/ledOn/')
+            
+         }
+         
+           document.getElementById("offSwitch1").onclick=function(){
+             alert("Switch Off")
+             window.open('http://192.168.43.201:5000/ledOff/')
+            
+         } 
+         
+       
+         </script>
+                    
+                </div>
+                
+                
+                <div class="clear"></div>
+                
+                <div>Fan</div>
+                
+                <div class="side-article">
+                
+                <button type="submit"  class="onSwitch" class="signupbtn" id="onSwitch2">Switch On</button>
+                 <button type="submit"  class="offSwitch" class="signupbtn" id="offSwitch2">Switch Off</button>
+
+
+       <script type="text/javascript">
+       
+         document.getElementById("onSwitch2").onclick=function(){
+             alert("Switch On")
+             window.open('http://192.168.43.201:5000/fanOn/')
+         }
+         
+           document.getElementById("offSwitch2").onclick=function(){
+             alert("Switch Off")
+             window.open('http://192.168.43.201:5000/fanOff/')
+         }
+          
+          
+         </script>
+                    
+                </div>
+                
+                
+                 
+                <div class="clear"></div>
+                
+              <div>Webcam</div>
+                
+                <div class="side-article">
+                
+                <button type="submit"  class="onSwitch" class="signupbtn" id="onSwitch3">Switch On</button>
+                 <button type="submit"  class="offSwitch" class="signupbtn" id="offSwitch3">Switch Off</button>
+
+
+       <script type="text/javascript">
+          
+         document.getElementById("onSwitch3").onclick=function(){
+             alert("Switch On")
+              window.open('http://192.168.43.201:5000/')
+           
+            
+         }
+         
+                
+         document.getElementById("offSwitch3").onclick=function(){
+             alert("Switch Off")
+              window.open('http://192.168.43.201:5000/home/')
+           
+            
+         }
+          
+          
+         </script>
+                    
+                </div>
+                
+                
+                
+                
+                
+    </div>
+            
+  </div>
+        
+  </body>
+
+</html>

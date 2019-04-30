@@ -1,0 +1,9 @@
+imutils
+
+flask
+
+picamera[array]
+
+Flask-BasicAuth==0.2.0
+Rpi.GPIO
+Smtp
